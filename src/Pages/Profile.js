@@ -4,9 +4,16 @@ import Header from '../components/Header';
 import avatar from '../images/avatar.jpg';
 import Plans from '../components/Plans';
 import { StyledButton } from '../styled/styledcomponents';
+import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
   const classes = useStyles();
+  const history = useNavigate()
+  const signout = () => {
+    auth.signOut();
+    history.push("/login")
+  }
   return (
     <div className={classes.root}>
       <Header />
@@ -20,7 +27,7 @@ const Profile = () => {
             <Plans cost={130}>Monkey Standard</Plans>
             <Plans cost={170}>Monkey Basic</Plans>
             <Plans wide="mediumWidth" color="gray" cost={250}>Monkey Premium</Plans>
-            <StyledButton wide="fullWidth">Cerrar sesión</StyledButton>
+            <StyledButton wide="fullWidth" onClick={signout}>Cerrar sesión</StyledButton>
           </div>
         </div>
       </div>

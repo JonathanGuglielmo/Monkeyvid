@@ -1,5 +1,6 @@
 import { makeStyles, Typography } from '@material-ui/core';
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 import { StyledButton, StyledInput } from '../styled/styledcomponents';
 
@@ -7,18 +8,21 @@ const SignUp = () => {
   const classes = useStyles();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useNavigate();
 
   const signIn = (e) => {
     e.preventDefault();
     auth.signInWithEmailAndPassword(email, password)
-    .then(authUser => console.log(authUser)) 
+    //revisar esto
+    .then(authUser => history.push('/'))
     .catch(err => alert(err.message))
   };
 
   const register = (e) => {
     e.preventDefault();
     auth.createUserWithEmailAndPassword(email, password)
-      .then(authUser => console.log(authUser)) 
+      //revisar esto
+      .then(authUser => history.push('/'))
       .catch(err => alert(err.message))
   };
   return (
