@@ -72,4 +72,13 @@ yarn add styled-components
 -Distribución y formato
 -Variable false = formulario
 
+## SIGN UP y LOGUIN
+- Firebase
+- inicializado objeto auth
+- SignIn con auth (email and password)
+
+## Redux
+-Slice userSlice para manejar el usuario en todos los componentes
+
+
 

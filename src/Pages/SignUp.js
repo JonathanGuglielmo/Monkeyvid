@@ -6,13 +6,20 @@ import { StyledButton, StyledInput } from '../styled/styledcomponents';
 const SignUp = () => {
   const classes = useStyles();
   const [email, setEmail] = useState("");
-  const [contraseña, setContraseña] = useState("");
-  const signIn = (e) => {};
+  const [password, setPassword] = useState("");
+
+  const signIn = (e) => {
+    e.preventDefault();
+    auth.signInWithEmailAndPassword(email, password)
+    .then(authUser => console.log(authUser)) 
+    .catch(err => alert(err.message))
+  };
+
   const register = (e) => {
     e.preventDefault();
-    auth.createUserWithEmailPassword(email, contraseña)
-      .then()
-      .catch()
+    auth.createUserWithEmailAndPassword(email, password)
+      .then(authUser => console.log(authUser)) 
+      .catch(err => alert(err.message))
   };
   return (
     <div className={classes.root}>
@@ -22,13 +29,15 @@ const SignUp = () => {
       <form className={classes.form}>
         <StyledInput 
           value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
           placeholder='Email' 
           className={classes.email}
         />
         <StyledInput 
-          value={contraseña} 
-          onChange={(e) => setContraseña(e.target.value)} 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+          type="password"
           placeholder='Contraseña' 
           className={classes.contraseña}
         />
