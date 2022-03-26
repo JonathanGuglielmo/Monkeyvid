@@ -80,5 +80,13 @@ yarn add styled-components
 ## Redux
 -Slice userSlice para manejar el usuario en todos los componentes
 
+## EventListener en App.js
+
+## API
+-Agregando API desde themoviedb
+
+## Creando componente ROW
+
+
 
 

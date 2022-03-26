@@ -8,23 +8,22 @@ const SignUp = () => {
   const classes = useStyles();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const signIn = (e) => {
     e.preventDefault();
     auth.signInWithEmailAndPassword(email, password)
-    //revisar esto
-    .then(authUser => history.push('/'))
+    .then((authUser) => navigate.push("/"))
     .catch(err => alert(err.message))
   };
 
   const register = (e) => {
     e.preventDefault();
     auth.createUserWithEmailAndPassword(email, password)
-      //revisar esto
-      .then(authUser => history.push('/'))
+      .then(authUser => navigate.push("/"))
       .catch(err => alert(err.message))
-  };
+    };
+
   return (
     <div className={classes.root}>
       <Typography variant='h5' align='left'>

@@ -9,10 +9,10 @@ import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
   const classes = useStyles();
-  const history = useNavigate()
+  const navigate = useNavigate()
   const signout = () => {
     auth.signOut();
-    history.push("/login")
+    navigate.push("/login")
   }
   return (
     <div className={classes.root}>
