@@ -1,44 +1,75 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## PASO A PASO DEL PROYECTO
 
-## Available Scripts
+## Inicialización del proyecto
+`npx create-react-app netflixclon --template redux`
 
-In the project directory, you can run:
+### `yarn start`
 
-### `npm start`
+## Proceso de liempieza
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## instalando librerías
+-material-ui/core
+yarn add @material-ui/core
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+-axios
+yarn add axios
 
-### `npm test`
+-firebase
+yarn add firebase
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-react router dom
+yarn add react-router-dom
 
-### `npm run build`
+-react uuid
+yarn add react-uuid
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-styled-components
+yarn add styled-components
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## App.js - Layout inicial
+-Rutas
+-Login o App condicionado a la existencia de un usuario
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Estilos
+-useStyles para crear una infrestructura que nos permita asignar estilos a cada uno de los componentes
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Crear carpetas de componentes
+-Pages
+-Infraestructura básica de los componentes que representan una página: Home, Login, Paypal, Profile y SingUp
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Estilos en los componentes de Pages
+-Patrón para añadir la infraestructura a todos los componentes Pages
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Crear la carpeta de components (Banner, Header, Plans y Rows)
+-Infraestructura básica del resto de los componentes
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Estilos en los componentes de components
+-Patrón para añadir la infraestructura a todos los componentes de components
 
-## Learn More
+## Trabajando en el Header
+-Logo
+-Clase transparente en AppBar al hacer scrollY
+-Avatar
+-Rutas a los componentes del header
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Trabajando en el Banner
+-Imagen como background
+-Posicion del título de la pelicula, botones y descripción
+-div vacio con gradiente para fucionar banner con fondo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Trabajando con el Login
+-Imagen como background
+-Botón con syled components > StyledButton
+-Input personalizado > StyledInput
+
+## Trabajando con el Profile
+-Distribución
+-<Plans> Texto + Boton
+-Props a styledcomponents
+
+## Trabajando en el Sign UP
+-Distribución y formato
+-Variable false = formulario
+
+
