@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core';
 import React from 'react'
 import Header from '../components/Header';
 import Banner from '../components/Banner';
-import Rows from '../components/Rows';
+import Row from '../components/Row';
 import requests from '../Request';
 
 
@@ -12,13 +12,13 @@ const Home = () => {
     <div>
     <Header />
     <Banner />
-    <Rows title="TOP PELICULAS" fetchUrl={requests.fetchTopRated} isLargeRow/>
-    <Rows title="ORIGINALES DE NETFLIX" fetchUrl={requests.fetchNetflixOriginals}/>
-    <Rows title="TERROR" fetchUrl={requests.fetchHorrorMovies}/>
-    <Rows title="ACCIÓN" fetchUrl={requests.fetchActionMovies}/>
-    <Rows title="ROMANCE" fetchUrl={requests.fetchRomanceMovies}/>
-    <Rows title="COMEDIA" fetchUrl={requests.fetchComedyMovies}/>
-    <Rows title="DOCUMENTALES" fetchUrl={requests.fetchTopRated}/>
+    <Row title="TOP PELICULAS" fetchUrl={requests.fetchTopRated} isLargeRow/>
+    <Row title="ORIGINALES DE NETFLIX" fetchUrl={requests.fetchNetflixOriginals}/>
+    <Row title="TERROR" fetchUrl={requests.fetchHorrorMovies}/>
+    <Row title="ACCIÓN" fetchUrl={requests.fetchActionMovies}/>
+    <Row title="ROMANCE" fetchUrl={requests.fetchRomanceMovies}/>
+    <Row title="COMEDIA" fetchUrl={requests.fetchComedyMovies}/>
+    <Row title="DOCUMENTALES" fetchUrl={requests.fetchTopRated}/>
     </div>
   )
 }

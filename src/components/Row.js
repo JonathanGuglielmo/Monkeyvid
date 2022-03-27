@@ -2,7 +2,7 @@ import { makeStyles, Typography } from '@material-ui/core';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
-const Rows = (title,fetchUrl, isLargeRow) => {
+const Row = ({title, fetchUrl, isLargeRow}) => {
     const classes = useStyles();
     const [movies, setMovies] = useState ([]);
 
@@ -21,8 +21,9 @@ const Rows = (title,fetchUrl, isLargeRow) => {
     <div className={classes.root}>
       <Typography variant='h4'>{title}</Typography>
       <div className={classes.posters}>
-        {movies.map(
-            (movie) =>
+        {
+        movies.map(
+          (movie) =>
             ((isLargeRow && movie.poster_path) ||
               (!isLargeRow && movie.backdrop_path)) && (
                 <img
@@ -31,12 +32,12 @@ const Rows = (title,fetchUrl, isLargeRow) => {
                   }`}
                 key={movie.id}
                 src={`${base_url}${
-                  isLargeRow ? movie.poster_path : movie?.bacldrop_path
+                  isLargeRow ? movie.poster_path : movie?.backdrop_path
                 }`}
                 alt={movie?.name}
                 />
               )
-          )};
+          )}
       </div>
     </div>
   );
@@ -48,13 +49,28 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: theme.spacing(4),
     },
     posters: {
-      displat: "flex",
+      display: "flex",
       overflowY: "hidden",
       overflowX: "scroll",
       "&::-webkit-scrollbar": {
-        display:"none",
+        display: "none",
       },
     },
+    poster: {
+      maxHeight: "12rem",
+      objectFit: "contain",
+      marginRight: theme.spacing(1),
+      transition: "transform 450ms",
+      "&:hover": {
+        transform: "scale(1,1)",
+      },
+    },
+    posterLarge: {
+      maxHeight: "15rem",
+      "&:hover": {
+        transform: "scale(1.15)",
+      }
+    }
   }));
 
-export default Rows
+export default Row
